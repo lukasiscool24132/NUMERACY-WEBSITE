@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Basa Tayo! Matutong bumasa</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF6DC;--ink:#1B2A5C;--soft:#4A5A8C;--card:#fff;--line:#E3D9B8;--blue:#2F6BFF;--sun:#FFC93C;--red:#E8384F;--green:#1E9E63;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101A3D;--ink:#FFF6DC;--soft:#B9C4E8;--card:#1B2A5C;--line:#34457F;--green:#5BE3A1}}
+:root[data-theme="dark"]{--bg:#101A3D;--ink:#FFF6DC;--soft:#B9C4E8;--card:#1B2A5C;--line:#34457F;--green:#5BE3A1}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.3rem/1.5 "Atkinson Hyperlegible",system-ui,sans-serif}
+h1,h2,b,button,.big{font-family:"Baloo 2","Trebuchet MS",sans-serif}
+h1,h2{line-height:1.1;margin:0 0 .3em;font-weight:800}
+h1{font-size:clamp(2.8rem,10vw,5.2rem)}
+h2{font-size:clamp(2rem,6vw,3rem)}
+p{margin:0 0 .8em;max-width:30em}
+section{padding:2.5rem 1.25rem;max-width:62rem;margin:0 auto}
+:focus-visible{outline:4px solid var(--red);outline-offset:3px}
+.en{display:block;font:400 .75em/1.4 "Atkinson Hyperlegible",system-ui,sans-serif;color:var(--soft);margin-top:.2em}
+.en.i{display:inline;margin:0}
+h1 .en{font-size:.3em;margin-top:.5em}h2 .en{font-size:.45em}
+nav{display:flex;justify-content:space-between;align-items:center;gap:.5rem;padding:.8rem 1.25rem;max-width:62rem;margin:0 auto}
+nav b{font-size:1.7rem;font-weight:800}
+button{font:800 1.5rem "Baloo 2",sans-serif;cursor:pointer;min-width:3.6rem;min-height:3.6rem;border-radius:1rem;border:3px solid var(--ink);background:var(--card);color:var(--ink);padding:.2rem 1rem;box-shadow:0 4px 0 var(--ink);transition:transform .08s}
+button:active{transform:translateY(4px);box-shadow:0 0 0 var(--ink)}
+#tgl{font-size:1rem;min-height:2.6rem;box-shadow:none}
+.say{background:var(--sun);color:#1B2A5C;border-color:#1B2A5C;box-shadow:0 4px 0 #1B2A5C}
+.vow{display:grid;grid-template-columns:repeat(auto-fit,minmax(9rem,1fr));gap:1rem;margin-top:1rem}
+.vow button{display:flex;flex-direction:column;align-items:center;padding:1rem .5rem;border-radius:1.5rem;line-height:1.1}
+.vow .e{font-size:3.5rem}.vow .L{font-size:3rem;color:var(--blue)}.vow .w{font:700 1.3rem "Atkinson Hyperlegible",sans-serif}.vow .t{font:400 .9rem "Atkinson Hyperlegible",sans-serif;color:var(--soft)}
+.vow button.on{background:var(--sun);color:#1B2A5C}.vow button.on .L,.vow button.on .t{color:#1B2A5C}
+.mk{background:var(--card);border:3px solid var(--ink);border-radius:2rem;padding:1.5rem}
+.out{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:.5rem 0 1rem}
+.eq{font:800 2.2rem "Baloo 2",sans-serif;color:var(--soft)}
+.syl{font:800 clamp(5rem,24vw,9rem)/1 "Baloo 2",sans-serif;background:var(--sun);color:#1B2A5C;border-radius:1.5rem;padding:0 .3em;transition:transform .15s}
+.syl.pop{transform:scale(1.1) rotate(-3deg)}
+.lab{font-weight:700;margin:.5rem 0}
+.row{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:.8rem}
+.row button[aria-pressed="true"]{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 4px 0 #1B2A5C}
+.game{background:#2F6BFF;color:#fff}
+.game .wrap{max-width:62rem;margin:0 auto;padding:2.5rem 1.25rem}
+.game .en{color:#fff;opacity:.9}
+.stars{font:800 2rem "Baloo 2",sans-serif;background:#fff;color:#1B2A5C;border-radius:2rem;padding:.1rem 1rem;display:inline-block}
+.pic{font-size:8rem;line-height:1.1;margin:.5rem 0}
+.opts{display:flex;flex-wrap:wrap;gap:.8rem;margin:1rem 0}
+.opts button{font-size:2rem;min-height:4.4rem;background:#fff;color:#1B2A5C;border-color:#1B2A5C}
+.opts button.good{background:#B6F2D3}.opts button.bad{background:#FFD0D5}
+#msg{font:800 2rem "Baloo 2",sans-serif;min-height:3rem}
+.game .acts button{background:var(--sun);color:#1B2A5C;border-color:#1B2A5C;box-shadow:0 4px 0 #1B2A5C}
+.help{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:1rem;margin-top:1rem}
+.help div{background:var(--card);border:3px solid var(--line);border-radius:1.5rem;padding:1rem;text-align:center}
+.help .e{font-size:3.5rem;line-height:1.1}
+.help b{display:block;font-size:1.5rem}
+.help p{margin:0 auto}
+.tips{list-style:none;padding:0;display:grid;gap:.8rem;margin:1rem 0 0}
+.tips li{background:var(--card);border-left:10px solid var(--sun);border-radius:1rem;padding:.8rem 1rem;font-size:1.4rem}
+.note{font-size:1rem;color:var(--soft);margin-top:1.5rem}
+footer{padding:2rem 1.25rem;text-align:center;font:800 1.6rem "Baloo 2",sans-serif}
+.hide-en .en{display:none}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav aria-label="Menu"><b>📖 Basa Tayo!</b><button id="tgl" type="button">Hide English</button></nav>
+<main>
+<section>
+  <h1>Tara, magbasa tayo! 🌟<span class="en">Let's read together!</span></h1>
+  <p>Pindutin ang mga button. May tunog sila! 🔊<span class="en">Tap the buttons. They make sounds!</span></p>
+</section>
+
+<section aria-labelledby="h1a">
+  <h2 id="h1a">Kilalanin ang mga patinig<span class="en">Meet the vowels</span></h2>
+  <p>Pindutin ang card. Pakinggan ang tunog.<span class="en">Tap a card. Listen to the sound.</span></p>
+  <div class="vow" id="vow"></div>
+</section>
+
+<section aria-labelledby="h2a">
+  <h2 id="h2a">Gumawa ng pantig<span class="en">Make a syllable</span></h2>
+  <div class="mk">
+    <p>Pumili ng katinig. Pumili ng patinig. Pakinggan!<span class="en">Pick a consonant. Pick a vowel. Listen!</span></p>
+    <div class="out"><span class="eq" id="eq">B + A =</span><div class="syl" id="syl" aria-live="polite">ba</div><button class="say" id="saySyl" type="button">🔊 Pakinggan<span class="en i"> (Listen)</span></button></div>
+    <div class="lab">Katinig<span class="en i"> (consonants)</span></div><div class="row" id="cons"></div>
+    <div class="lab">Patinig<span class="en i"> (vowels)</span></div><div class="row" id="vows"></div>
+  </div>
+</section>
+
+<div class="game">
+ <div class="wrap">
+  <h2>Hulaan ang salita<span class="en">Guess the word</span></h2>
+  <p>Tingnan ang larawan. Pindutin ang tamang salita.<span class="en">Look at the picture. Tap the right word.</span></p>
+  <div class="stars" aria-live="polite">⭐ <span id="sc">0</span></div>
+  <div class="pic" id="pic" role="img" aria-label="Larawan">🏠</div>
+  <div class="opts" id="opts"></div>
+  <div id="msg" aria-live="polite"></div>
+  <div class="acts"><button id="sayW" type="button">🔊 Pakinggan<span class="en i"> (Listen)</span></button> <button id="next" type="button">Susunod<span class="en i"> (Next)</span></button></div>
+ </div>
+</div>
+
+<section aria-labelledby="h4a">
+  <h2 id="h4a">Sino ang puwedeng tumulong?<span class="en">Who can help?</span></h2>
+  <div class="help">
+    <div><span class="e">👩‍🏫</span><b>Guro<span class="en">Teacher</span></b><p>Magtanong sa guro mo.<span class="en">Ask your teacher.</span></p></div>
+    <div><span class="e">👨‍👩‍👧</span><b>Pamilya<span class="en">Family</span></b><p>Magbasa kayo nang magkasama.<span class="en">Read together.</span></p></div>
+    <div><span class="e">📚</span><b>Aklatan<span class="en">Library</span></b><p>Maraming libro roon.<span class="en">There are many books.</span></p></div>
+    <div><span class="e">🧒</span><b>Kaibigan<span class="en">Friends</span></b><p>Maglaro ng salita.<span class="en">Play word games.</span></p></div>
+  </div>
+  <p class="note">Para sa magulang at guro: magtanong sa DepEd office o barangay tungkol sa ALS at mga klase sa pagbasa.<span class="en">For parents and teachers: ask your DepEd office or barangay about ALS and reading classes.</span></p>
+</section>
+
+<section aria-labelledby="h5a">
+  <h2 id="h5a">3 madaling tip<span class="en">3 easy tips</span></h2>
+  <ul class="tips">
+    <li>⏰ 10 minuto bawat araw<span class="en">10 minutes every day</span></li>
+    <li>🗣️ Sabihin nang malakas<span class="en">Say it out loud</span></li>
+    <li>🚌 Basahin ang mga karatula<span class="en">Read the signs around you</span></li>
+  </ul>
+</section>
+</main>
+<footer>Kaya mo ’yan! 🌟<span class="en">You can do it!</span></footer>
+
+<script>
+const $=id=>document.getElementById(id);
+function speak(t){try{if(!window.speechSynthesis)return;speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="fil-PH";u.rate=.7;const f=speechSynthesis.getVoices().find(x=>/^(fil|tl)/i.test(x.lang));if(f)u.voice=f;speechSynthesis.speak(u)}catch(e){}}
+$("tgl").onclick=()=>{const h=document.body.classList.toggle("hide-en");$("tgl").textContent=h?"Show English":"Hide English"};
+
+const VW=[["a","aso","🐶","dog"],["e","elepante","🐘","elephant"],["i","isda","🐟","fish"],["o","oso","🐻","bear"],["u","unan","🛏️","pillow"]];
+VW.forEach(([l,w,e,t])=>{const b=document.createElement("button");b.type="button";b.setAttribute("aria-label",l+", "+w);
+b.innerHTML='<span class="e">'+e+'</span><span class="L">'+l.toUpperCase()+l+'</span><span class="w">'+w+'</span><span class="t">'+t+'</span>';
+b.onclick=()=>{document.querySelectorAll(".vow button").forEach(x=>x.classList.remove("on"));b.classList.add("on");speak(l+". "+w)};$("vow").appendChild(b)});
+
+const C="b k d g h l m n p r s t w y".split(" "),V="a e i o u".split(" ");let c="b",v="a";
+function mk(list,box,set){list.forEach(x=>{const b=document.createElement("button");b.type="button";b.textContent=x.toUpperCase();b.setAttribute("aria-label",x);b.onclick=()=>{set(x);render();speak(c+v)};box.appendChild(b)})}
+function render(){$("syl").textContent=c+v;$("eq").textContent=c.toUpperCase()+" + "+v.toUpperCase()+" =";$("syl").classList.add("pop");setTimeout(()=>$("syl").classList.remove("pop"),150);
+document.querySelectorAll("#cons button").forEach((b,i)=>b.setAttribute("aria-pressed",C[i]===c));
+document.querySelectorAll("#vows button").forEach((b,i)=>b.setAttribute("aria-pressed",V[i]===v))}
+mk(C,$("cons"),x=>c=x);mk(V,$("vows"),x=>v=x);render();$("saySyl").onclick=()=>speak(c+v);
+
+const W=[["🏠","bahay","house"],["🐟","isda","fish"],["🌙","buwan","moon"],["🍚","kanin","rice"],["🐱","pusa","cat"],["🐶","aso","dog"],["🌳","puno","tree"],["☀️","araw","sun"],["🥭","mangga","mango"],["🍌","saging","banana"],["⚽","bola","ball"],["📖","aklat","book"]];
+let cur=0,done=false,score=0;
+function round(){done=false;$("msg").textContent="";cur=Math.floor(Math.random()*W.length);
+const a=W[cur][1];const o=W.map(w=>w[1]).filter(w=>w!==a).sort(()=>Math.random()-.5).slice(0,2);
+$("pic").textContent=W[cur][0];$("pic").setAttribute("aria-label","Larawan ng "+a);
+const box=$("opts");box.innerHTML="";
+[a,...o].sort(()=>Math.random()-.5).forEach(w=>{const b=document.createElement("button");b.type="button";b.textContent=w;b.onclick=()=>{
+if(done)return;speak(w);
+if(w===a){done=true;b.classList.add("good");score++;$("sc").textContent=score;$("msg").textContent="Galing! ⭐ ("+a+" = "+W[cur][2]+")"}
+else{b.classList.add("bad");$("msg").textContent="Subukan ulit! (Try again!)"}};box.appendChild(b)})}
+$("next").onclick=round;$("sayW").onclick=()=>speak(W[cur][1]);round();
+</script>
+</body>
+</html>
